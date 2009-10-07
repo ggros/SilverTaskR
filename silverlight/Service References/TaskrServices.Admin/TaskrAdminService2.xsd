@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:Apprenda.Taskr.Service" elementFormDefault="qualified" targetNamespace="urn:Apprenda.Taskr.Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:63292/TaskrAdminService.svc?xsd=xsd2" namespace="Apprenda.Taskr" />
+  <xs:import schemaLocation="http://localhost:63292/TaskrAdminService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="SaveTag">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="Apprenda.Taskr" minOccurs="0" name="tag" nillable="true" type="q1:Tag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTagResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="SaveTagResult" type="q2:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTag">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="tagId" type="q3:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTagResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTagResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListTags">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListTagsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="Apprenda.Taskr" minOccurs="0" name="ListTagsResult" nillable="true" type="q4:ArrayOfTag" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

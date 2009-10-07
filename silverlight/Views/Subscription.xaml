@@ -1,0 +1,64 @@
+﻿<navigation:Page x:Class="Taskr.Silverlight.Views.Subscription" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           d:DesignWidth="640" d:DesignHeight="480"
+           Title="Taskr: Your Subscription Profile">
+    <Grid x:Name="LayoutRoot">
+        <Border Margin="140,40">            
+            <StackPanel Orientation="Vertical">
+                
+                <TextBlock Text="User Profile" Style="{StaticResource ProfileHeadingStyle}"></TextBlock>
+
+                <StackPanel Orientation="Horizontal" Style="{StaticResource ProfilePropertyItem}">
+                    <TextBlock Text="Name:" Style="{StaticResource ProfilePropertyTitleStyle}"></TextBlock>
+                    <TextBlock x:Name="nameField" Style="{StaticResource ProfilePropertyValueStyle}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Style="{StaticResource ProfilePropertyItem}">
+                    <TextBlock Text="Email:" Style="{StaticResource ProfilePropertyTitleStyle}"></TextBlock>
+                    <TextBlock x:Name="emailField" Style="{StaticResource ProfilePropertyValueStyle}"></TextBlock>
+                </StackPanel>
+
+                <TextBlock Text="Taskr Subscription Info" Style="{StaticResource ProfileHeadingStyle}"></TextBlock>
+
+                <StackPanel Orientation="Horizontal" Style="{StaticResource ProfilePropertyItem}">
+                    <TextBlock Text="Tasks Allowed:" Style="{StaticResource ProfilePropertyTitleStyle}"></TextBlock>
+                    <TextBlock x:Name="allowedTasksField" Style="{StaticResource ProfilePropertyValueStyle}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Style="{StaticResource ProfilePropertyItem}">
+                    <TextBlock Text="Current Tasks:" Style="{StaticResource ProfilePropertyTitleStyle}"></TextBlock>
+                    <TextBlock x:Name="currentTasksField" Style="{StaticResource ProfilePropertyValueStyle}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Style="{StaticResource ProfilePropertyItem}">
+                    <TextBlock Text="Priority Management:" Style="{StaticResource ProfilePropertyTitleStyle}"></TextBlock>
+                    <TextBlock x:Name="priorityManagementField" Style="{StaticResource ProfilePropertyValueStyle}"></TextBlock>
+                </StackPanel>
+
+                <TextBlock Text="Taskr Permissions" Style="{StaticResource ProfileHeadingStyle}"></TextBlock>
+
+                <StackPanel Orientation="Horizontal" Style="{StaticResource ProfilePropertyItem}">
+                    <TextBlock Text="Delete Tasks:" Style="{StaticResource ProfilePropertyTitleStyle}"></TextBlock>
+                    <TextBlock x:Name="deleteTasksField" Style="{StaticResource ProfilePropertyValueStyle}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Style="{StaticResource ProfilePropertyItem}">
+                    <TextBlock Text="Change Task Priority:" Style="{StaticResource ProfilePropertyTitleStyle}"></TextBlock>
+                    <TextBlock x:Name="changePriorityField" Style="{StaticResource ProfilePropertyValueStyle}"></TextBlock>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Style="{StaticResource ProfilePropertyItem}">
+                    <TextBlock Text="Manage Tags:" Style="{StaticResource ProfilePropertyTitleStyle}"></TextBlock>
+                    <TextBlock x:Name="manageTagsField" Style="{StaticResource ProfilePropertyValueStyle}"></TextBlock>
+                </StackPanel>
+
+
+            </StackPanel>            
+        </Border>    
+    </Grid>
+</navigation:Page>

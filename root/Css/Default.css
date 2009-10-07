@@ -1,0 +1,317 @@
+﻿body
+{	
+	font-size: 62.5%;
+	font-family: Verdana, Arial, Sans-Serif;
+	margin: 0; padding: 0;	
+}
+
+p
+{
+	font-family: Arial, Verdana, Sans-Serif;	
+	font-size: 1.2em;
+	line-height: 1.3em;
+}
+
+h3
+{
+	font-family: Arial, Verdana, Sans-Serif;
+	font-size: 1.8em;
+	color: #79B837;
+}
+
+input, textarea
+{
+	font-family: Arial, Verdana, Sans-Serif;	
+	font-size: 1em;
+	line-height: 1.3em;
+}
+
+a, a:link, a:visited
+{
+	color: #444;
+}
+
+.banner
+{
+	height: 55px;
+	_height: 55px;	
+	background: #79B837;	
+}
+
+.welcomeMessage
+{
+	text-align: left;
+	font-size: 1.8em;
+	font-weight: bold;
+	color: #777;
+}
+
+.profileLink
+{
+	font-size: .5em;	
+	font-weight: bold;
+}
+
+.profileLink a, .profileLink a:active
+{
+	color: #ECB603;
+	text-decoration: none;
+}
+
+.profileLink a:hover 
+{
+	color: #BE9306;
+	text-decoration: underline;
+}
+
+.footer
+{
+	border-top: 1px dotted #999999;
+}
+
+.taskmenu
+{
+	margin: 0;
+	padding: 0;
+	border-top: 0;
+}
+
+.taskmenu-link, .taskmenu-link:link, .taskmenu-link:visited
+{	
+	font-size: 1.2em;
+	padding: 5px;
+}
+
+.taskmenu-link:hover { border-bottom: 1px solid #79B837; }
+
+.section
+{	
+	border: 1px solid #ECECEC;
+	margin: 0;
+	padding: 0;
+}
+
+.section .title
+{	
+	margin: 0; padding: 2px;	
+	background: #79B837 url(Images/backgrounds/bg-section-title.gif) 0px 0px repeat-x;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-align: left;
+}
+
+.datagrid
+{
+	width: 100%;	
+}
+
+.datagrid-item
+{
+	font-family: Arial, Verdana, Sans-Serif;	
+	font-size: 1.2em;
+	line-height: 1.3em;	
+	text-align: left;
+	vertical-align: top;
+	border-bottom: 1px solid #ECECEC;	
+}
+
+.datarow-hover
+{
+	background: #ECECEC;
+}
+
+.priority-Low
+{
+	color: Green;
+}
+
+.priority-Medium
+{
+	color: Orange;
+}
+
+.priority-High
+{
+	color: Red;
+}
+
+.overdue
+{
+	color: Red;
+}
+
+/******* CALENDAR *******/
+
+.calendar
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:Black;
+	border-collapse:collapse;
+	background-color:#FFFFFF;
+	cursor:default;
+}
+
+.calendar-picker
+{
+	background-color: #FFFFFF;
+	border: 1px gray solid;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: "Verdana",monospace;
+	padding: 2px;
+	cursor: pointer;
+}
+
+.calendar td
+{
+font-size:11px;
+}
+
+.calendar-title
+{
+	font-weight:bold;
+	background-color:#D7D7E5;
+}
+
+.calendar-day
+{
+	width:25px;
+	cursor:pointer;
+	text-align:center;
+	border-width:1px;
+	border-color:#F6F6F6;
+	border-style:solid;
+}
+
+.calendar-dayhover
+{
+	width:25px;
+	cursor:pointer;
+	text-align:center;
+	text-decoration:underline;
+	border-width:1px;
+	border-color:#F6F6F6;
+	border-style:solid;
+}
+
+.calendar-dayheader
+{
+	width:25px;
+	text-align:center;
+	border-width:1px;
+	border-color:white;
+	border-style:solid;
+	font-weight:bold;
+	background-color:#FFFFFF;
+}
+
+.calendar-othermonthday
+{
+	color:#999999;
+}
+
+.calendar-outofrangeday
+{
+	visibility:hidden;
+}
+
+.calendar-selectedday
+{
+	width:25px;
+	background-color:#FBE694;
+	color:#000000;
+	border-width:1px;
+	border-color:#BB5503 !important;
+	border-style:solid;
+	font-weight:bold;
+}
+
+.calendar-month
+{
+	background-color:#F6F6F6;
+	margin-left:5px;
+	margin-right:5px;
+	margin-bottom:5px;
+	margin-top:0px;
+}
+
+.calendar-nextprev
+{
+	cursor:pointer;
+	height:25px;
+	vertical-align:middle;
+	padding:0px 5px 0px 5px;
+}
+
+.calendar-selector
+{
+	width:14px;
+	cursor:pointer;
+	text-align:left;
+	vertical-align:middle;
+	background-color:#FFFFFF;
+}
+ 
+.mainmenu
+{
+	margin: 0;
+	padding: 0;
+	border-top: 0;	
+}
+
+.mainmenu-link, .mainmenu-link:link, .mainmenu-link:visited
+{	
+	font-size: 1.4em;
+	font-weight: bold;
+	padding: 5px;
+	color: #FFFFFF;
+}
+
+.mainmenu-link:hover { text-decoration: underline; }
+
+.status-message
+{	
+	color: #333333;
+	font-size: 1.3em;
+	font-weight: bold;
+	text-align:left;
+}
+
+/* Status Messages
+------------------------------------------------------------------*/
+.status-error
+{
+	display: block;
+	text-align: center;
+	margin: 10px;
+	padding: 6px;	
+	border: 1px solid #efcab8;
+	border-top: none;
+	font-weight: bold;
+	background: #f8e9e1 url(Images/backgrounds/bg-status-error.gif) repeat-x 0px 0px;
+}
+
+.status-success
+{
+	display: block;
+	text-align: center;
+	margin: 10px;
+	padding: 6px;		
+	border: 1px solid #d4efb8;
+	border-top: none;
+	font-weight: bold;	
+	background: #ecf8e1 url(Images/backgrounds/bg-status-success.gif) 0px 0px repeat-x;
+}
+
+.status-activity
+{
+	display: block;
+	text-align: center;
+	margin: 10px;
+	padding: 6px;		
+	border: 1px solid #b8caef;
+	border-top: none;
+	font-weight: bold;	
+	background: #e1e8f8 url(Images/backgrounds/bg-status-activity.gif) 0px 0px repeat-x;	
+}

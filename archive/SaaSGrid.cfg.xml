@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SaaSGrid Local Config defines mock data that SaaSGrid applications can use to mimic
+  behavior in a SaaSGrid instance.
+
+  Via this file, you can define tenants, metering shims, and other SaaSGrid relevant entities.
+
+  The following is a sample definition that you can use to get started. It is
+  advisable that you customize it to fit your organizational needs.
+
+  Some of the data in this file has little bearing on execution (such as applicationId and 
+  providerId) unless you explicitly check for it. This data is simply required for compatability 
+  completeness with a live deployment.
+  
+  Note: GUIDs in this file may reference defined entities. Most elements in this file are reference by 
+  other elements by there IDs
+  
+  Note: Alls GUID's in this file should be unique unless the GUID is a reference to some defined
+  entity. Failure to accomplish this may yield incorrect local behavior.
+-->
+<saasGridLocal xmlns="http://schemas.saasgrid.com/LocalConfig" 
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+               xsi:schemaLocation="http://schemas.saasgrid.com/LocalConfig http://schemas/LocalSaaSGridConfig.xsd"
+               applicationId="40fbb645-f07f-4f59-a4eb-4a692452f709"
+               providerId="00000000-0000-4000-0000-000000000001">
+  <!--
+  All emulated tenants are defined as children of this tag. One of the tenants can be identified as the 
+  current executing tenant in the 'executionContext' tag. Each tenant can be defined with necessary information
+  pertaining to their organization, users, etc. All attributes on the 'tenant' tag are required.
+  -->
+  <tenants>        
+    <tenant id="14BD660D-54B4-4f0a-A7B5-4DD36FFC2E03"
+            alias="contoso"
+            name="Contoso Inc."
+            administrator="F19929F5-9F48-4002-878C-D4AADD786E47"
+            primaryContactSection="28B3962C-AF39-416f-955A-3BBDABC0B659">
+      
+      <!--
+      'contactSection' items are geographically defined contact bundles. Each one of these items define a location
+      and an associated auxilliary information (such as phone numbers, e-mail addresses, etc.)
+      -->
+      <contactSections>
+        <contactSection id="28B3962C-AF39-416f-955A-3BBDABC0B659" label="Headquarter">
+          <location address="3 Acme way."
+                    city="Metropolis" 
+                    state="Kansas"
+                    country="United States of America"
+                    zip="12065"/>
+          <details>
+            <detail id="E89D5049-9402-44e3-9094-009E93E0180C" name="Phone" value="518-383-2130" type="USPhoneNumber"/>
+          </details>
+        </contactSection>
+      </contactSections>
+      
+      <!--
+      Each 'user' defines a person belonging to this tenant. The 'user' may or may not be a subscription holder, but all user
+      information can be used for referential and meta-data purposes in your application.
+      -->
+      <users>                
+        <user id="F19929F5-9F48-4002-878C-D4AADD786E47"
+              email="admin@contoso.com"
+              firstName="Jorge"
+              lastName="Lucas"
+              isSaaSGridUser="true"
+              primaryContactSection="8FA459CB-9F03-4146-87E0-65F07A8AF158">
+              <contactSections>
+                <contactSection id="8FA459CB-9F03-4146-87E0-65F07A8AF158" label="Home">
+                  <location address="47 Broadway Av."
+                            city="Milwakee"
+                            state="Alabama"
+                            country="United States of America"
+                            zip="54632"/>
+                  <details> 
+                    <detail id="297E8B14-2D4D-4b84-AB13-D4122E2A9611" name="Phone" value="574-695-3321" type="USPhoneNumber"/>
+                  </details>
+                </contactSection>
+              </contactSections>          
+        </user>
+
+        <user id="FC99D9E3-612A-48ad-A62B-E314923417A5"
+              email="pperes@contoso.com"
+              firstName="Pablo"
+              isSaaSGridUser="true"
+              lastName="Peres"/>
+        
+        <user id="D0D353F2-4C71-4bd5-9021-7FBCD9A6AB99"
+              email="mlopez@contoso.com"
+              firstName="Mario"
+              isSaaSGridUser="true"
+              lastName="Lopez"/>
+        
+        <user id="51D27C58-6137-4085-A03C-E2ACB2FDF0E9"
+              email="acohen@contoso.com"
+              firstName="Andy"
+              isSaaSGridUser="true"
+              lastName="Cohen"/>
+      </users>
+
+      <!--
+      Each 'role' defines a role within this mock tenant. You can map a role to securables via it's
+      'securables' sub elements, as well as user an role membership.
+      -->
+      <roles>       
+        <role id="F7B58397-EC59-4e4e-9FF6-2D0B12A25258" name="Admin">
+          <userMembers>
+            <userMember>F19929F5-9F48-4002-878C-D4AADD786E47</userMember>
+          </userMembers>          
+          <securables>
+            <securable name="Modify Tags"/>
+            <securable name="Delete Tasks"/>
+          </securables>
+        </role>
+
+        <role id="76872DF5-14DF-4b1b-9E15-AF86FD9E18C6" name="Manager">
+          <userMembers>
+            <userMember>FC99D9E3-612A-48ad-A62B-E314923417A5</userMember>
+          </userMembers>
+          <roleMembers>
+            <roleMember>F7B58397-EC59-4e4e-9FF6-2D0B12A25258</roleMember>
+          </roleMembers>
+          <securables>
+            <securable name="Change Priority"/>
+          </securables>
+        </role>
+      </roles>
+    </tenant>
+
+    <tenant id="9A02A760-9B5D-4d50-924E-21D950F7C88F"
+            alias="fabricam"
+            name="Fabricam Enterprises"
+            administrator="CD68386A-2717-44bb-801C-703E178CE118"
+            primaryContactSection="20013130-A875-49b6-AA74-BD0E6D884C33">
+
+      <contactSections>
+        
+        <!-- Firt Location -->
+        <contactSection id="20013130-A875-49b6-AA74-BD0E6D884C33" label="US Office">
+          <location address="1 Main Way, Suite 205" 
+                    city="New York"
+                    state="New York"
+                    country="United States of America"
+                    zip="01203"/>
+          <details>
+            <detail id="F984CD5D-E3DD-4675-A571-215702B819AD" name="Phone" value="888-596-7542" type="USPhoneNumber"/>
+            <detail id="A003F3C8-02CC-461e-A2ED-6D49AEA23C75" name="Fax" value="877-695-3214" type="USPhoneNumber"/>
+          </details>
+        </contactSection>
+        
+        <!-- Second Location -->
+        <contactSection id="B5C9AFEE-6EF9-4a4d-AB7C-2BA1F7EFDFB5" label="European Office">
+          <location address="Rue la nouve."
+                    city="Paris"
+                    state="Region Parisienne"
+                    country="France"
+                    zip="1010"/>
+          <details>
+            <detail id="F0CF4BB7-78CE-4159-B03B-7BAC88617069" name="Phone" value="518-827-5552" type="USPhoneNumber"/>
+          </details>
+        </contactSection>
+      </contactSections>
+
+      <users>
+        <user id="CD68386A-2717-44bb-801C-703E178CE118"
+              email="bsmith@fabricam.com"
+              firstName="Brian"
+              isSaaSGridUser="true"
+              lastName="Smith"/>
+        
+        <user id="1BDF0C52-5779-4cb7-BB0A-73CB8FEF8FC5"
+              email="ebrier@fabricam.com"
+              firstName="Edward"
+              isSaaSGridUser="true"
+              lastName="Brier" />
+
+        <user id="49DFB0A0-B8D2-483a-9AC3-7C4FF24F19D7"
+              email="abenaim@fabricam.com"
+              firstName="Andrew"
+              isSaaSGridUser="true"
+              lastName="Benaim"/>
+
+        <user id="5B8E25EC-D49D-4672-9D48-786A8C54C833"
+              email="Matthew"
+              firstName="Lurdes"
+              isSaaSGridUser="true"
+              lastName="mlurdes@fabricam.com"
+              primaryContactSection="4EE4570B-F3E6-471a-9906-D4A121DF63C1">
+          <contactSections>
+            <contactSection id="4EE4570B-F3E6-471a-9906-D4A121DF63C1" label="Home">
+              <location address="47 Broadway Av."
+                        city="Milwakee"
+                        state="Alabama"
+                        country="United States of America"
+                        zip="54632"/>
+              <details>
+                <detail id="297E8B14-2D4D-4b84-AB13-D4122E2A9611" name="Phone" value="574-695-3321" type="USPhoneNumber"/>
+              </details>
+            </contactSection>
+          </contactSections>
+        </user>
+      </users>
+
+      <roles>
+        <role id="D50FA126-B754-404e-8D8C-7635A5687F8C" name="Super User">
+          <userMembers>
+            <userMember>CD68386A-2717-44bb-801C-703E178CE118</userMember>
+            <userMember>1BDF0C52-5779-4cb7-BB0A-73CB8FEF8FC5</userMember>
+          </userMembers>
+          <securables>
+            <securable name="Modify Tags"/>
+            <securable name="Change Priority"/>
+            <securable name="Delete Tasks"/>
+          </securables>
+        </role>
+      </roles>
+    </tenant>
+  </tenants>
+  
+  <!--
+  'executionContext' captures a tenant and associated information as the context in which your code will execute. 
+  Any queries for information (like for the current tenant's data) executes against the context captured in this 
+  element.
+  -->
+  <executionContext tenantId="14BD660D-54B4-4f0a-A7B5-4DD36FFC2E03"
+                    userId="F19929F5-9F48-4002-878C-D4AADD786E47" 
+                    subscriptionId="D1956834-5AD3-4a18-81B8-D43EF2E7B6DE"
+                    sessionId="01A55496-EBBD-4694-8FC9-4712EE7334A9" >
+
+    <!--
+    'executionMeters' define the meters your application code expects, as well as mock values to use for the
+    execution. The data is volatile in memory, meaning that once you stop the executing process the data is lost.
+    -->
+    <executionMeters>
+      <toggle name="Priority Management" enabled="false" />
+      <limiter name="Number of Tasks" enabled="true" limit="2" count="0" />
+    </executionMeters>
+    
+    <!-- 
+    Any securables your application code expects should be defined here. The 'role' elements within a 'tenant' defined in this 
+    file can reference these securables by name to establish role to securable mapping.
+    -->
+    <executionSecurables>
+      <securable name="Modify Tags"/>
+      <securable name="Change Priority"/>
+      <securable name="Delete Tasks"/>
+    </executionSecurables>
+  </executionContext>
+</saasGridLocal>

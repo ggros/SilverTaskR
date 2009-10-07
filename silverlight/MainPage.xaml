@@ -1,0 +1,65 @@
+﻿<UserControl 
+    x:Class="Taskr.Silverlight.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation" 
+    xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="640" d:DesignHeight="480">
+  
+    
+    <Grid x:Name="LayoutRoot" Style="{StaticResource LayoutGridStyle}">
+        
+        <StackPanel Orientation="Vertical">
+            
+            <Grid x:Name="HeaderGrid" Style="{StaticResource HeaderGridStyle}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Assets/Logo.jpg" Height="55" Width="300" HorizontalAlignment="Left"></Image>    
+                    <Grid x:Name="mainNavGrid">
+                        <StackPanel x:Name="MainNavigationPanel" Orientation="Horizontal" Style="{StaticResource MainNavigationPanelStyle}">
+                            <HyperlinkButton x:Name="tasksLink" TargetName="navigationFrame" NavigateUri="/Home" Content="Tasks" Style="{StaticResource MainNavigationLinkStyle}" />
+                            <HyperlinkButton x:Name="adminLink" TargetName="navigationFrame" NavigateUri="/Admin" Content="Admin" Style="{StaticResource MainNavigationLinkStyle}" />
+                        </StackPanel>                    
+                    </Grid>
+                </StackPanel>                
+            </Grid>
+
+            <Border Style="{StaticResource BodyBorderStyle}">
+                <StackPanel Orientation="Vertical">
+
+                    <Border>
+                        <Grid>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock x:Name="greeting" Style="{StaticResource GreetingStyle}"></TextBlock>
+                                <HyperlinkButton x:Name="profileLink" TargetName="navigationFrame" NavigateUri="/Subscription" Content="profile" Style="{StaticResource ProfileNavigationStyle}" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                    
+                    <Border>
+                        <TextBlock x:Name="statusLabel" FontSize="12" HorizontalAlignment="Center"></TextBlock>                        
+                    </Border>
+
+                    <Border x:Name="ContentBorder" Style="{StaticResource ContentBorderStyle}">
+                        <navigation:Frame x:Name="navigationFrame" Source="/Home">
+                            <navigation:Frame.UriMapper>
+                                <uriMapper:UriMapper>
+                                    <uriMapper:UriMapping Uri="" MappedUri="/Views/Home.xaml" />
+                                    <uriMapper:UriMapping Uri="/{pageName}" MappedUri="/Views/{pageName}.xaml" />
+                                </uriMapper:UriMapper>
+                            </navigation:Frame.UriMapper>
+                        </navigation:Frame>
+                    </Border>
+                    
+                </StackPanel>
+            </Border>
+
+            <Grid x:Name="FooterGrid" Style="{StaticResource FooterGridStyle}">
+                <TextBlock x:Name="copyrightNotice" Style="{StaticResource FooterGridTextStyle}" />
+            </Grid>
+
+        </StackPanel>
+        
+    </Grid>
+
+</UserControl>

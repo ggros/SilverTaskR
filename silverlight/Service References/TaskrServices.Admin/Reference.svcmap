@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dd72ce0e-1fb7-4768-ab0e-48feb0a5e86e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:63292/TaskrAdminService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TaskrAdminService.xsd" MetadataType="Schema" ID="71a97cda-a8a9-4be6-8cea-21d36b388dc7" SourceId="1" SourceUrl="http://localhost:63292/TaskrAdminService.svc?xsd=xsd2" />
+    <MetadataFile FileName="TaskrAdminService1.xsd" MetadataType="Schema" ID="32f763e7-e571-4a9f-bd78-993ac7a88acd" SourceId="1" SourceUrl="http://localhost:63292/TaskrAdminService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TaskrAdminService.wsdl" MetadataType="Wsdl" ID="b3735380-7f32-4035-9009-1b22ad523b99" SourceId="1" SourceUrl="http://localhost:63292/TaskrAdminService.svc?wsdl" />
+    <MetadataFile FileName="TaskrAdminService2.xsd" MetadataType="Schema" ID="d9e2e04c-e1b9-4d3c-9350-17b121a5bd5a" SourceId="1" SourceUrl="http://localhost:63292/TaskrAdminService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TaskrAdminService.disco" MetadataType="Disco" ID="b40eaa22-9c00-4b76-8359-c781a2d07b53" SourceId="1" SourceUrl="http://localhost:63292/TaskrAdminService.svc?disco" />
+    <MetadataFile FileName="TaskrAdminService1.wsdl" MetadataType="Wsdl" ID="3e5ea0af-4745-4220-918b-4b6ba6cf6ffb" SourceId="1" SourceUrl="http://localhost:63292/TaskrAdminService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TaskrAdminService3.xsd" MetadataType="Schema" ID="2a8e3b55-7d32-46f2-9713-f09501c162e5" SourceId="1" SourceUrl="http://localhost:63292/TaskrAdminService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="32260e63-3498-4ae2-a581-c95885bd48fa" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:63277/TaskrCoreService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="TaskrCoreService.disco" MetadataType="Disco" ID="f831b788-e2b3-4eab-8562-a1493a65f1c2" SourceId="1" SourceUrl="http://localhost:63277/TaskrCoreService.svc?disco" />
+    <MetadataFile FileName="TaskrCoreService.xsd" MetadataType="Schema" ID="127cec43-4f35-4858-9bea-878dc5f07086" SourceId="1" SourceUrl="http://localhost:63277/TaskrCoreService.svc?xsd=xsd4" />
+    <MetadataFile FileName="TaskrCoreService.wsdl" MetadataType="Wsdl" ID="ab198b21-d40d-483a-8c70-e5451c07bf61" SourceId="1" SourceUrl="http://localhost:63277/TaskrCoreService.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="TaskrCoreService1.wsdl" MetadataType="Wsdl" ID="2e7a541d-5a04-4332-a814-017fb925313b" SourceId="1" SourceUrl="http://localhost:63277/TaskrCoreService.svc?wsdl" />
+    <MetadataFile FileName="TaskrCoreService1.xsd" MetadataType="Schema" ID="f94cd428-cfcd-4fef-b357-6c7414992827" SourceId="1" SourceUrl="http://localhost:63277/TaskrCoreService.svc?xsd=xsd3" />
+    <MetadataFile FileName="TaskrCoreService2.xsd" MetadataType="Schema" ID="161fd463-db8f-4bc5-9c45-b42c4192f9da" SourceId="1" SourceUrl="http://localhost:63277/TaskrCoreService.svc?xsd=xsd1" />
+    <MetadataFile FileName="TaskrCoreService3.xsd" MetadataType="Schema" ID="3acd81c8-6058-4065-ad00-bd02d387f7e4" SourceId="1" SourceUrl="http://localhost:63277/TaskrCoreService.svc?xsd=xsd5" />
+    <MetadataFile FileName="TaskrCoreService4.xsd" MetadataType="Schema" ID="4960f829-1c81-4900-b36d-3d92707ac28d" SourceId="1" SourceUrl="http://localhost:63277/TaskrCoreService.svc?xsd=xsd0" />
+    <MetadataFile FileName="TaskrCoreService5.xsd" MetadataType="Schema" ID="1994e8de-335f-4203-aaf8-201935446e07" SourceId="1" SourceUrl="http://localhost:63277/TaskrCoreService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

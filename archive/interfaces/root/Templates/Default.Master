@@ -1,0 +1,111 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="Taskr.Web.Templates.Default" %>
+<%@ Import Namespace="Apprenda.SaaSGrid" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Welcome to Taskr</title>
+    <link rel="Stylesheet" href="../Css/Default.css" />
+    
+</head>
+<body>
+    <form id="DefaultForm" runat="server">
+    
+    <asp:ScriptManager ID="DefaultScriptManager" runat="server"></asp:ScriptManager>
+
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <asp:Panel ID="BannerPanel" runat="server" CssClass="banner">     
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td style="width: 200px;">
+                                <asp:Image ID="BannerLogo" runat="server"
+                                    ImageUrl="~/Css/Images/banner-logo.jpg" />                                                                            
+                            </td>
+                            <td>
+                                <% if (UserContext.Instance.IsAuthorized("Modify Tags"))
+                                   { %>
+                                <asp:Menu ID="MainMenu" SkinID="MainMenu" runat="server">                                    
+                                    <Items>
+                                        <asp:MenuItem Text="Tasks" NavigateUrl="~/Default.aspx"></asp:MenuItem>                                        
+                                        <asp:MenuItem Text="Admin" NavigateUrl="~/Admin.aspx"></asp:MenuItem>                                                                                
+                                    </Items>                                    
+                                </asp:Menu>
+                                <% } else { %>
+                                <asp:Menu ID="Menu1" SkinID="MainMenu" runat="server">                                    
+                                    <Items>
+                                        <asp:MenuItem Text="Tasks" NavigateUrl="~/Default.aspx"></asp:MenuItem>                                        
+                                    </Items>                                                                        
+                                </asp:Menu>                                
+                                <% } %>
+                            </td>
+                            <td style="width: 200px;">
+                                <asp:UpdatePanel runat="server" UpdateMode="Conditional">
+                                    <ContentTemplate>
+                                        <p style="color: #FFFFFF; text-align: right; font-weight: bold; margin: 2px 10px;">
+                                            Today is <%= DateTime.Now.ToShortDateString() %>.<br />                                                                                
+                                            <asp:Label ID="DueTodayLabel" runat="server"></asp:Label> tasks due today.<br />
+                                            <asp:Label ID="OverdueLabel" runat="server"></asp:Label> overdue tasks.
+                                        </p>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>                                
+                            </td>
+                        </tr>
+                    </table>
+                </asp:Panel>
+            </td>
+        </tr>
+    </table>
+
+    <div align="center">
+    <table width="90%" cellpadding="0" cellspacing="20" >
+        <tr>            
+            <td width="25%">
+                <asp:ContentPlaceHolder ID="HeadingContent" runat="server">                
+                <p class="welcomeMessage">
+                    Hello, <%= UserContext.Instance.CurrentUser.FirstName  %>
+                    <span class="profileLink">
+                        <asp:HyperLink ID="ProfileLink" runat="server" Text="profile" NavigateUrl="~/Subscription.aspx"></asp:HyperLink>
+                    </span>
+                </p>                
+                </asp:ContentPlaceHolder>                
+            </td>
+            <td>
+                <asp:UpdatePanel runat="server">
+                    <ContentTemplate>
+                        <p class="status-message">
+                            <asp:Label ID="StatusLabel" runat="server"></asp:Label>
+                        </p>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </td>            
+        </tr>      
+    </table>
+    </div>
+    
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>
+                <asp:ContentPlaceHolder ID="BodyContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
+    
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td>                
+                <asp:ContentPlaceHolder ID="FooterContent" runat="server">
+                    <asp:Panel ID="FooterPanel" runat="server" CssClass="footer">
+                        <asp:Label ID="CopyrightLabel" runat="server"> Copyright <%= DateTime.Now.Year.ToString() %>, Apprenda Inc. </asp:Label>
+                    </asp:Panel>
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
+
+    </form>
+</body>
+</html>

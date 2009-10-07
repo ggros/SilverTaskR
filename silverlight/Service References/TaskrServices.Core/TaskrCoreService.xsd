@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="urn:Apprenda.SaaSGrid" elementFormDefault="qualified" targetNamespace="urn:Apprenda.SaaSGrid" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:63277/TaskrCoreService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/Apprenda.SaaSGrid.Subscription" />
+  <xs:complexType name="LimiterExhaustedDetail">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MeterExhaustedDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="LimitValue" type="xs:long" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="LimiterExhaustedDetail" nillable="true" type="tns:LimiterExhaustedDetail" />
+  <xs:complexType name="MeterExhaustedDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Apprenda.SaaSGrid.Subscription" minOccurs="0" name="Status" type="q1:MeterStatus" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MeterExhaustedDetail" nillable="true" type="tns:MeterExhaustedDetail" />
+  <xs:complexType name="UnsubscribedFeatureDetail">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MeterExhaustedDetail">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="UnsubscribedFeatureDetail" nillable="true" type="tns:UnsubscribedFeatureDetail" />
+  <xs:complexType name="BoundaryViolatedDetail">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MeterExhaustedDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BoundaryValue" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BoundaryViolatedDetail" nillable="true" type="tns:BoundaryViolatedDetail" />
+  <xs:complexType name="BlockExhaustedDetail">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:MeterExhaustedDetail">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="BlockExhaustedDetail" nillable="true" type="tns:BlockExhaustedDetail" />
+  <xs:complexType name="NotAuthorizedDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SecurableName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotAuthorizedDetail" nillable="true" type="tns:NotAuthorizedDetail" />
+</xs:schema>

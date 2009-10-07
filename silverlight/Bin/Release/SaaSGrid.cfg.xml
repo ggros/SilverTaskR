@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<saasGridLocal xmlns="http://schemas.saasgrid.com/LocalConfig"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://schemas.saasgrid.com/LocalConfig http://schemas/LocalSaaSGridConfig.xsd"
+               applicationId="40fbb645-f07f-4f59-a4eb-4a692452f709"               
+               providerId="00000000-0000-4000-0000-000000000001">
+   <tenants>
+    <tenant id="0d3af04e-610b-491b-a970-ba5f40b99844"
+            name="Mateo Inc."
+            alias="mateo"
+            administrator="8aacedd6-91c8-4ec8-8277-a374f183cd35"
+            primaryContactSection="2C304C78-94D8-4f94-91DC-5A8FF7704208">
+      <users>
+        <user id="8aacedd6-91c8-4ec8-8277-a374f183cd35"
+              email="mammerman+provider@apprenda.com"
+              firstName="Matt"
+              lastName="Ammerman"
+              isSaaSGridUser="true"></user>
+        <user id="503780f0-e453-40f0-b2f8-42aeb1f1b3fa"
+              email="mammerman+test1@apprenda.com"
+              firstName="Matt"
+              lastName="Ammerman1"
+              isSaaSGridUser="true"></user>
+      </users>
+      <roles>
+        <role id="77D14BEB-A5D5-4a24-83D1-FBF335172158" name="Managers">
+          <userMembers>            
+            <userMember>503780f0-e453-40f0-b2f8-42aeb1f1b3fa</userMember>
+          </userMembers>
+          <securables>
+            <securable name="Delete Tasks"/>            
+            <securable name="Modify Tags"/>
+          </securables>
+        </role>        
+      </roles>
+      <contactSections>
+        <contactSection id="2C304C78-94D8-4f94-91DC-5A8FF7704208" label="Headquarters">
+          <location address="1 Barney Road" city="Clifton Park" state="NY" zip="12065" country="United States of America" />
+          <details>
+            <detail id="F3C2D038-D3D0-42f6-8174-042C4369694B" name="Email" value="info@mateoinc.com"/>            
+          </details>
+        </contactSection>
+      </contactSections>      
+    </tenant>
+  </tenants>
+  <executionContext
+    sessionId="975b6b64-2b88-4fad-9d37-dcec6ad1a70b"
+	  tenantId="0d3af04e-610b-491b-a970-ba5f40b99844"
+    userId="503780f0-e453-40f0-b2f8-42aeb1f1b3fa"
+    serviceImplementationId="00000000-0000-4000-0000-000000000000">
+    <executionEdition name="Basic Edition" />
+    <executionMeters>
+      <toggle name="Priority Management" enabled="false" />
+      <limiter name="Number of Tasks" enabled="true" limit="10" count="0" />
+    </executionMeters>
+    <executionSecurables>
+      <securable name="Delete Tasks"/>
+      <securable name="Change Task Priority" />
+      <securable name="Modify Tags" />	    
+    </executionSecurables>
+  </executionContext>
+</saasGridLocal>

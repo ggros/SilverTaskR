@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="urn:Apprenda.Taskr.Service" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" targetNamespace="urn:Apprenda.Taskr.Service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:Apprenda.Taskr.Service/Imports">
+      <xsd:import schemaLocation="http://localhost:63292/TaskrAdminService.svc?xsd=xsd0" namespace="urn:Apprenda.Taskr.Service" />
+      <xsd:import schemaLocation="http://localhost:63292/TaskrAdminService.svc?xsd=xsd3" namespace="urn:Apprenda.SaaSGrid" />
+      <xsd:import schemaLocation="http://localhost:63292/TaskrAdminService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:63292/TaskrAdminService.svc?xsd=xsd2" namespace="Apprenda.Taskr" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="TaskrAdmin_SaveTag_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTag" />
+  </wsdl:message>
+  <wsdl:message name="TaskrAdmin_SaveTag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="TaskrAdmin_SaveTag_NotAuthorizedDetailFault_FaultMessage">
+    <wsdl:part xmlns:q1="urn:Apprenda.SaaSGrid" name="detail" element="q1:NotAuthorizedDetail" />
+  </wsdl:message>
+  <wsdl:message name="TaskrAdmin_DeleteTag_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTag" />
+  </wsdl:message>
+  <wsdl:message name="TaskrAdmin_DeleteTag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTagResponse" />
+  </wsdl:message>
+  <wsdl:message name="TaskrAdmin_DeleteTag_NotAuthorizedDetailFault_FaultMessage">
+    <wsdl:part xmlns:q2="urn:Apprenda.SaaSGrid" name="detail" element="q2:NotAuthorizedDetail" />
+  </wsdl:message>
+  <wsdl:message name="TaskrAdmin_ListTags_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListTags" />
+  </wsdl:message>
+  <wsdl:message name="TaskrAdmin_ListTags_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListTagsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TaskrAdmin">
+    <wsdl:operation name="SaveTag">
+      <wsdl:input wsaw:Action="urn:Apprenda.Taskr.Service.SaveTag" message="tns:TaskrAdmin_SaveTag_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Apprenda.Taskr.Service.SaveTagReply" message="tns:TaskrAdmin_SaveTag_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:Apprenda.SaaSGrid.Fault" name="NotAuthorizedDetailFault" message="tns:TaskrAdmin_SaveTag_NotAuthorizedDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTag">
+      <wsdl:input wsaw:Action="urn:Apprenda.Taskr.Service.DeleteTag" message="tns:TaskrAdmin_DeleteTag_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Apprenda.Taskr.Service.DeleteTagReply" message="tns:TaskrAdmin_DeleteTag_OutputMessage" />
+      <wsdl:fault wsaw:Action="urn:Apprenda.SaaSGrid.Fault" name="NotAuthorizedDetailFault" message="tns:TaskrAdmin_DeleteTag_NotAuthorizedDetailFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListTags">
+      <wsdl:input wsaw:Action="urn:Apprenda.Taskr.Service.ListTags" message="tns:TaskrAdmin_ListTags_InputMessage" />
+      <wsdl:output wsaw:Action="urn:Apprenda.Taskr.Service.ListTagsReply" message="tns:TaskrAdmin_ListTags_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
