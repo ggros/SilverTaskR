@@ -295,7 +295,7 @@ namespace Apprenda.Taskr
 		}
 		
 		[Column(Name="Priority", Storage="_RawPriority", DbType="Int")]
-		private System.Nullable<int> RawPriority
+		public System.Nullable<int> RawPriority
 		{
 			get
 			{

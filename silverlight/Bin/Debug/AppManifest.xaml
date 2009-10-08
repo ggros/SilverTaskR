@@ -16,6 +16,7 @@
     <AssemblyPart x:Name="SaaSGrid.API.Silverlight" Source="SaaSGrid.API.Silverlight.dll" />
     <AssemblyPart x:Name="SaaSGrid.API.Silverlight.Local" Source="SaaSGrid.API.Silverlight.Local.dll" />
     <AssemblyPart x:Name="System.ComponentModel.DataAnnotations" Source="System.ComponentModel.DataAnnotations.dll" />
+    <AssemblyPart x:Name="System.Data.Services.Client" Source="System.Data.Services.Client.dll" />
     <AssemblyPart x:Name="System.Windows.Controls.Data" Source="System.Windows.Controls.Data.dll" />
     <AssemblyPart x:Name="System.Windows.Controls.Data.Input" Source="System.Windows.Controls.Data.Input.dll" />
     <AssemblyPart x:Name="System.Windows.Controls.Navigation" Source="System.Windows.Controls.Navigation.dll" />

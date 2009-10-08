@@ -65,7 +65,8 @@
 		  <param name="background" value="white" />
 		  <param name="minRuntimeVersion" value="3.0.40624.0" />
 		  <param name="autoUpgrade" value="true" />
-		  <param name="initparams" value="taskrCoreAddress=http://saasgridpreview.com:11000/services/soap11/http/r/silvertaskr(v1)/TaskrCoreService/ITaskrCoreService,taskrAdminAddress=http://saasgridpreview.com:11000/services/soap11/http/r/silvertaskr(v1)/TaskrAdminService/ITaskrAdminService" />
+		  <param name="initparams2" value="taskrCoreAddress=http://saasgridpreview.com:11000/services/soap11/http/r/silvertaskr(v1)/TaskrCoreService/ITaskrCoreService,taskrAdminAddress=http://saasgridpreview.com:11000/services/soap11/http/r/silvertaskr(v1)/TaskrAdminService/ITaskrAdminService" />
+		  <param name="initparams" value="taskrCoreAddress=http://saasgridpreview.com:11000/services/soap11/http/r/silvertaskr/TaskrCoreService/ITaskrCoreService,taskrAdminAddress=http://saasgridpreview.com:11000/services/soap11/http/r/silvertaskr/TaskrAdminService/ITaskrAdminService" />
 		  <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=3.0.40624.0" style="text-decoration:none">
  			  <img src="http://go.microsoft.com/fwlink/?LinkId=108181" alt="Get Microsoft Silverlight" style="border-style:none"/>
 		  </a>

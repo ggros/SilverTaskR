@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="41dbcb07-eea2-45d0-af22-b5f764856d65" xmlns="urn:schemas-microsoft-com:xml-dataservicemap">
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:7777/TaskRDataService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.edmx" MetadataType="Edmx" ID="3801e853-0364-42b1-8e48-2ec9b91a91d8" SourceId="1" SourceUrl="http://localhost:7777/TaskRDataService" />
+  </Metadata>
+  <Extensions />
+</ReferenceGroup>

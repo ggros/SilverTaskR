@@ -1,4 +1,7 @@
-﻿namespace Apprenda.Taskr
+﻿using System.Data.Services;
+using System.Data.Services.Common;
+
+namespace Apprenda.Taskr
 {
     using System;
     using System.Runtime.Serialization;
@@ -10,6 +13,7 @@
     /// to tasks. Each tag has a unique label used to assign an attribute
     /// to a task.
     /// </summary>
+    [DataServiceKey("Id")]
     public partial class Tag : IEquatable<Tag>
     {
         #region Constructor

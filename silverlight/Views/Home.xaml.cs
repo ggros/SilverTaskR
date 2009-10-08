@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System;
+using System.Data.Services.Client;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Windows;
 using System.Windows.Browser;
 using System.Windows.Controls;
@@ -27,11 +29,43 @@ namespace Taskr.Silverlight.Views
 {
     public partial class Home : Page
     {
-
+        private IList<TaskRDataService.Task> allTasks;
         public Home()
         {
             InitializeComponent();
-            BindTaskList();            
+            BindTaskList();
+            CallDataService();
+        }
+
+        private void CallDataService()
+        {
+            var ctx = new TaskRDataService.TaskrDataContext(new Uri("http://localhost:7777/TaskRDataService"));
+            ctx.SendingRequest += (sender,args) =>
+                                      {
+                                          Console.WriteLine(args.RequestHeaders.ToString());
+                                      };
+
+            var dsquery = (DataServiceQuery<TaskRDataService.Task>)(from task in ctx.Tasks select task);
+            dsquery.BeginExecute(
+                result =>
+                    {
+                        try
+                        {
+                            var collection = dsquery.EndExecute(result);
+                            allTasks = collection.ToList();
+                            var sb = new StringBuilder();
+                            foreach (var t in allTasks)
+                            {
+                                sb.AppendLine(t.Subject);
+                            }
+                            this.txtTaskDescription.Text = sb.ToString(); 
+                        }
+                        catch(Exception ex)
+                        {
+                            this.txtTaskDescription.Text = String.Format("Exception: {0}", ex);
+                        }
+                    }
+                , null);
         }
 
         private void BindTaskList()
@@ -98,7 +132,7 @@ namespace Taskr.Silverlight.Views
                     dg_c.Width = new DataGridLength(dg_c.ActualWidth + (space_available / myDataGrid.Columns.Count));
                 }
             }
-        }        
+        }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
@@ -144,8 +178,8 @@ namespace Taskr.Silverlight.Views
                 new TaskrCoreClient(
                     new SaaSGridSilverlightCustomBinding(new SaaSGridContextInspector()),
                     new EndpointAddress(App.Current.Host.InitParams["taskrCoreAddress"])
-                );            
-            
+                );
+
             proxy.SaveTaskCompleted +=
                 (object s, SaveTaskCompletedEventArgs args) =>
                 {
@@ -167,7 +201,7 @@ namespace Taskr.Silverlight.Views
         {
             txtTaskSubject.Text = string.Empty;
             txtTaskDescription.Text = string.Empty;
-            txtTaskDueDate.Text = string.Empty;            
+            txtTaskDueDate.Text = string.Empty;
         }
 
     }

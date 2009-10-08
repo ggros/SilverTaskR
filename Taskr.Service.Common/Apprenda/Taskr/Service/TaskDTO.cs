@@ -74,7 +74,7 @@
         {
             Task instance = new Task(subject);
             instance.Id = Guid.NewGuid();
-            instance.Priority = (TaskPriority)priority;
+            instance.RawPriority = (int?)priority;
             instance.DueDate = dueDate;
             instance.Description = description;
 
@@ -86,7 +86,7 @@
             instance.Subject = subject;
             instance.Description = description;
             instance.DueDate = dueDate;
-            instance.Priority = (TaskPriority)priority;
+            instance.RawPriority = (int?)priority;
         }
 
         public void MapFrom(Task instance)
@@ -95,7 +95,7 @@
             subject = instance.Subject;
             dueDate = instance.DueDate;
             description = instance.Description;
-            priority = (TaskPriorityDTO)instance.Priority;
+            priority = instance.RawPriority.HasValue ? (TaskPriorityDTO)instance.RawPriority:TaskPriorityDTO.Unspecified;
         }
 
         public static TaskDTO StaticMapFrom(Task instance)

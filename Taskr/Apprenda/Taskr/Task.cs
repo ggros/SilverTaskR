@@ -1,4 +1,6 @@
-﻿namespace Apprenda.Taskr
+﻿using System.Data.Services.Common;
+
+namespace Apprenda.Taskr
 {
     using System;
     using System.Collections.Generic;
@@ -11,6 +13,7 @@
     /// This class represents a task or an activity. These are the main
     /// entities of the system.
     /// </summary>
+    [DataServiceKey("Id")]
     public partial class Task
     {
         #region Constructors
@@ -24,6 +27,7 @@
         }
         #endregion
 
+        /*
         #region Properties
         public TaskPriority Priority
         {
@@ -51,6 +55,7 @@
             }
         }
         #endregion
+        */
 
         #region Validation
         partial void OnSubjectChanging(string value)
